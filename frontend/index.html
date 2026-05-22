@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>AI Review Platform</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+</head>
+
+<body>
+  <div id="toast"></div>
+
+  <div class="container">
+
+    <h1>AI Review Platform</h1>
+    <button id="downloadPDF">
+  📄 Download PDF Report
+</button>
+    <button id="themeToggle">
+  🌙 Toggle Theme
+</button>
+
+    <form id="reviewForm">
+
+      <input type="text" name="name" placeholder="Enter Name" required />
+
+      <textarea
+        name="review"
+        placeholder="Write Review"
+        required
+      ></textarea>
+      <select id="languageSelect">
+
+  <option value="en">English</option>
+  <option value="hi">Hindi</option>
+  <option value="kn">Kannada</option>
+  <option value="mr">Marathi</option>
+
+</select>
+
+    <div class="star-rating">
+
+  <input type="radio" name="rating" value="5" id="star5" required>
+  <label for="star5">★</label>
+
+  <input type="radio" name="rating" value="4" id="star4">
+  <label for="star4">★</label>
+
+  <input type="radio" name="rating" value="3" id="star3">
+  <label for="star3">★</label>
+
+  <input type="radio" name="rating" value="2" id="star2">
+  <label for="star2">★</label>
+
+  <input type="radio" name="rating" value="1" id="star1">
+  <label for="star1">★</label>
+
+</div>
+
+      <input type="file" name="image" required />
+
+      <button type="submit">
+        Submit Review
+      </button>
+
+    </form>
+    <input
+  type="text"
+  id="searchInput"
+  placeholder="Search Reviews..."
+/>
+
+<div class="dashboard">
+
+  <div class="dashboard-card">
+    <h2 id="totalReviews">0</h2>
+    <p>Total Reviews</p>
+  </div>
+
+  <div class="dashboard-card">
+    <h2 id="positiveReviews">0</h2>
+    <p>Positive Reviews</p>
+  </div>
+
+  <div class="dashboard-card">
+    <h2 id="negativeReviews">0</h2>
+    <p>Negative Reviews</p>
+  </div>
+
+  <div class="dashboard-card">
+    <h2 id="averageRating">0</h2>
+    <p>Average Rating</p>
+  </div>
+
+</div>
+
+<div id="reviewsContainer"></div>
+<div class="avatar-section">
+
+  <h2>🎥 AI Avatar Review Video</h2>
+
+  <video
+    id="avatarVideo"
+    controls
+    width="100%"
+  >
+
+    <source
+      src=""
+      type="video/mp4"
+    >
+
+  </video>
+
+  <button id="generateAvatar">
+    Generate AI Avatar Video
+  </button>
+
+</div>
+
+  </div>
+
+  <canvas id="reviewChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div id="chatbotButton">
+  💬
+</div>
+
+<div id="chatbotContainer">
+
+  <div id="chatbotHeader">
+    AI Assistant
+  </div>
+
+  <div id="chatMessages"></div>
+
+  <input
+    type="text"
+    id="chatInput"
+    placeholder="Ask something..."
+  />
+
+  <button id="sendChat">
+    Send
+  </button>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="script.js"></script>
+
+    
+</body>
+</html>
