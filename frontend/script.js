@@ -342,3 +342,28 @@ generateAvatar.addEventListener("click", () => {
   "https://www.w3schools.com/html/mov_bbb.mp4";
 
 });
+const chatbotButton = document.getElementById("chatbotButton");
+const chatbotContainer = document.getElementById("chatbotContainer");
+
+chatbotButton.addEventListener("click", () => {
+  if (chatbotContainer.style.display === "block") {
+    chatbotContainer.style.display = "none";
+  } else {
+    chatbotContainer.style.display = "block";
+  }
+});
+
+const stars = document.querySelectorAll(".star-rating input");
+
+stars.forEach((star) => {
+  star.addEventListener("change", () => {
+    console.log("Rating:", star.value);
+  });
+});
+
+document.getElementById("themeToggle")
+.addEventListener("click", () => {
+
+  document.body.classList.toggle("light-mode");
+
+});
