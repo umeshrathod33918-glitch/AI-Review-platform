@@ -342,3 +342,69 @@ generateAvatar.addEventListener("click", () => {
   "https://www.w3schools.com/html/mov_bbb.mp4";
 
 });
+const reviewForm = document.getElementById("reviewForm");
+const reviewsContainer = document.getElementById("reviewsContainer");
+
+reviewForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const review = document.getElementById("review").value;
+
+    const reviewCard = document.createElement("div");
+    reviewCard.classList.add("review-card");
+
+    reviewCard.innerHTML = `
+        <h3>${name}</h3>
+        <p>${review}</p>
+
+        <div class="buttons">
+            <button onclick="shareWhatsApp('${review}')">
+                Share WhatsApp
+            </button>
+
+            <button onclick="shareTwitter('${review}')">
+                Share Twitter
+            </button>
+
+            <button onclick="shareLinkedIn('${review}')">
+                Share LinkedIn
+            </button>
+
+            <button onclick="copyReview('${review}')">
+                Copy Review
+            </button>
+        </div>
+    `;
+
+    reviewsContainer.prepend(reviewCard);
+
+    reviewForm.reset();
+});
+
+function shareWhatsApp(review) {
+    window.open(
+        `https://wa.me/?text=${encodeURIComponent(review)}`,
+        "_blank"
+    );
+}
+
+function shareTwitter(review) {
+    window.open(
+        `https://twitter.com/intent/tweet?text=${encodeURIComponent(review)}`,
+        "_blank"
+    );
+}
+
+function shareLinkedIn(review) {
+    window.open(
+        `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(review)}`,
+        "_blank"
+    );
+}
+
+function copyReview(review) {
+    navigator.clipboard.writeText(review);
+
+    alert("Review copied!");
+}
