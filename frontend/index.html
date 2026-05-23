@@ -2,12 +2,14 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>AI Review Platform</title>
 
   <link rel="stylesheet" href="style.css"/>
+
 </head>
 
 <body>
@@ -28,7 +30,12 @@
 
 <form id="reviewForm">
 
-<input type="text" name="name" placeholder="Enter Name" required />
+<input
+type="text"
+name="name"
+placeholder="Enter Name"
+required
+/>
 
 <textarea
 name="review"
@@ -37,10 +44,12 @@ required
 ></textarea>
 
 <select id="languageSelect">
+
 <option value="en">English</option>
 <option value="hi">Hindi</option>
 <option value="kn">Kannada</option>
 <option value="mr">Marathi</option>
+
 </select>
 
 <div class="star-rating">
@@ -102,57 +111,16 @@ placeholder="Search Reviews..."
 
 <div id="reviewsContainer"></div>
 
-<div class="avatar-section">
-
-<h2>🎥 AI Avatar Review Video</h2>
-
-<video
-id="avatarVideo"
-controls
-width="100%"
->
-<source src="" type="video/mp4">
-</video>
-
-<button id="generateAvatar">
-Generate AI Avatar Video
-</button>
-
-</div>
-
 </div>
 
 <canvas id="reviewChart"></canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<div id="chatbotButton">
-💬
-</div>
-
-<div id="chatbotContainer">
-
-<div id="chatbotHeader">
-AI Assistant
-</div>
-
-<div id="chatMessages"></div>
-
-<input
-type="text"
-id="chatInput"
-placeholder="Ask something..."
-/>
-
-<button id="sendChat">
-Send
-</button>
-
-</div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
