@@ -367,3 +367,25 @@ document.getElementById("themeToggle")
   document.body.classList.toggle("light-mode");
 
 });
+document.getElementById("downloadPDF").addEventListener("click", () => {
+
+const { jsPDF } = window.jspdf;
+
+const doc = new jsPDF();
+
+doc.text("AI Review Platform Report", 20, 20);
+
+doc.save("review-report.pdf");
+
+});
+document.getElementById("downloadPDF").addEventListener("click", () => {
+
+const { jsPDF } = window.jspdf;
+
+const doc = new jsPDF();
+
+doc.text("AI Review Platform Report", 20, 20);
+
+doc.save("review-report.pdf");
+
+});
